@@ -44,7 +44,7 @@ apply plugin: "org.gretty"
 allprojects {
     apply plugin: 'groovy'
     apply plugin: 'idea'
-    version = '2.2.5'
+    //version = '2.2.5'
     defaultTasks 'clean', 'build', 'createAllDeliverables'
 }
 

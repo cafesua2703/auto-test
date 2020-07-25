@@ -14,7 +14,6 @@
     <!-- Latest minified bootstrap css -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://code.jquery.com/ui/1.11.1/themes/smoothness/jquery-ui.css" />
-	<link rel="stylesheet" href="https://checkoutshopper-test.adyen.com/checkoutshopper/sdk/2.5.0/adyen.css" />
 	<script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
     <script src="https://code.jquery.com/ui/1.11.1/jquery-ui.min.js"></script>
     <spring:url value="/resources/core/js/index.js" var="coreJs" />
