@@ -217,26 +217,7 @@ public class Test{
 		   LoadLog();
 		XSSFWorkbook w1 = null;
 		String utilityFilePath="";
-		try {
-
-			os = System.getProperty("os.name");
-			if (!setObj.utilityFilePath.toString().endsWith("xlsx")) {
-				System.out
-						.println("Utility file defined in Setting.Java is not a correct one. Give the correct (xlsx) Format of Utility File");
-				LOGGER.log(Level.SEVERE, "Error occur in readUtilFile.","Utility file defined in Setting.Java is not a correct one. Give the correct (xlsx) Format of Utility File");
-				return;
-			} else {
-				w1 = new XSSFWorkbook(setObj.utilityFilePath);
-
-			}
-
-		} catch (Exception e) {
-			System.out
-					.println("Selenium Utility file is not accessible. Check your Utility file in the given path  "+e.getMessage());
-			LOGGER.log(Level.SEVERE, "Error occur in readUtilFile.","Selenium Utility file is not accessible. Check your Utility file in the given path  ");
-			LOGGER.log(Level.SEVERE, "utilityFilePath:" + setObj.utilityFilePath);
-			return;
-		}
+		w1 = checkUtilityFile(w1);
 
 
 		try {
@@ -524,6 +505,30 @@ public class Test{
 
 		}
 
+	}
+
+	private XSSFWorkbook checkUtilityFile(XSSFWorkbook w1) {
+		try {
+
+			os = System.getProperty("os.name");
+			if (!setObj.utilityFilePath.toString().endsWith("xlsx")) {
+				System.out
+						.println("Utility file defined in Setting.Java is not a correct one. Give the correct (xlsx) Format of Utility File");
+				LOGGER.log(Level.SEVERE, "Error occur in readUtilFile.","Utility file defined in Setting.Java is not a correct one. Give the correct (xlsx) Format of Utility File");
+				return null;
+			} else {
+				w1 = new XSSFWorkbook(setObj.utilityFilePath);
+
+			}
+
+		} catch (Exception e) {
+			System.out
+					.println("Selenium Utility file is not accessible. Check your Utility file in the given path  "+e.getMessage());
+			LOGGER.log(Level.SEVERE, "Error occur in readUtilFile.","Selenium Utility file is not accessible. Check your Utility file in the given path  ");
+			LOGGER.log(Level.SEVERE, "utilityFilePath:" + setObj.utilityFilePath);
+			return null;
+		}
+		return w1;
 	}
 
 	private void LoadLog() {
@@ -6871,6 +6876,7 @@ return elem;
 		LOGGER.log(Level.SEVERE, "match.getX():" + match.getX() + ", match.getY():" + match.getY());
 		LOGGER.log(Level.SEVERE, "match.getW():" + match.getW() + ", match.getH():" + match.getH());
 		Region region = screen.setRect(match.getX(), match.getY(), 20, 20);
+//		Region region = (Region) screen.setRect(match.getX(), match.getY(),20 ,20);
 		if(region.exists(pathItem) != null) {
 			region.click();
 		}

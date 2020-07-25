@@ -15,7 +15,10 @@ public class Setting
 	public String getUtilityFilePath() {
 		String os = System.getProperty("os.name");
 		if(os.contains("Window")) {
-			this.utilityFilePath = "webapps-exploded\\AutoTest\\webapp\\WEB-INF\\classes\\SampleScriptW\\Utility\\SeleniumUtility.xlsx";
+//			this.utilityFilePath = "webapps-exploded\\AutoTest\\webapp\\WEB-INF\\classes\\SampleScriptW\\Utility\\SeleniumUtility.xlsx";
+			this.utilityFilePath= "C:\\SampleScriptW\\Utility\\SeleniumUtility.xlsx";
+			// to debug
+//			this.utilityFilePath="SampleScriptW\\Utility\\SeleniumUtility.xlsx";
 		}
 		if(os.contains("Linux")) {
 			// to build product
