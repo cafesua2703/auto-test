@@ -22,7 +22,8 @@ public class Setting
 		}
 		if(os.contains("Linux")) {
 			// to build product
-			this.utilityFilePath="webapps-exploded/AutoTest/webapp/WEB-INF/classes/SampleScript/Utility/SeleniumUtility.xlsx";
+//			this.utilityFilePath="webapps-exploded/AutoTest/webapp/WEB-INF/classes/SampleScript/Utility/SeleniumUtility.xlsx";
+			this.utilityFilePath = "/media/DATA/SampleScript/Utility/SeleniumUtility.xlsx";
 			// to debug
 			//this.utilityFilePath="SampleScript/Utility/SeleniumUtility.xlsx";
 		}
